@@ -5,20 +5,35 @@ the GNU Recode library. They are intended to be used with pybliographer.
 
 This module requires the following libraries to be installed:
 
-   - Glib-2.0 (and its development headers)
+   - Glib-2.x (and its development headers)
    - GNU Recode 3.5 (and its development headers)
 
 
 * Compilation
 
-    python setup.py build
+   python setup.py build
+
+
+For additional options:
+
+   python setup.py build --help
+
 
 * Installation
 
    python setup.py install
 
 
+For additional options:
+
+   python setup.py install --help
+
+
 * Troubleshooting
+
+Here are listed some common problems while building the python-bibtex
+module.
+
 
 ** Glib-2.0 is not in a standard place
 

@@ -149,7 +149,8 @@ class run_check (Command):
             testsuite.run ()
 
         except RuntimeError, msg:
-            raise DistutilsExecError (msg)
+            sys.stderr.write ('error: %s\n' % msg)
+            raise DistutilsExecError ('please consult the "Troubleshooting" section in the README file.')
         
         return
     
