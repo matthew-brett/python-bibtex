@@ -2,6 +2,20 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2003-10-01 07:47:18 GMT	Frederic Gobry <frederic.gobry@smartdata.ch>	patch-11
+
+    Summary:
+      fix handling of bibtex_error as python exceptions
+    Revision:
+      python-bibtex--stable--1.2--patch-11
+
+    - The definition of G_LOG_DOMAIN=BibTeX was missing from the setup.py. 
+    - use the macro in the module file too.
+
+    modified files:
+     ./ChangeLog ./bibtexmodule.c ./setup.py
+
+
 2003-09-24 07:46:34 GMT	Frederic Gobry <frederic.gobry@smartdata.ch>	patch-10
 
     Summary:

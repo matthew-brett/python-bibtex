@@ -200,6 +200,7 @@ It requires the following libraries to be installed:
     Extension("_bibtex", bibtex,
               include_dirs = includes,
               library_dirs = libdirs,
+              define_macros = [('G_LOG_DOMAIN', '"BibTeX"')],
               libraries = libs + ['recode']),
 
     Extension("_recode", ["recodemodule.c"],

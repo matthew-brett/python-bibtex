@@ -723,7 +723,8 @@ static PyMethodDef bibtexMeth [] = {
 void init_bibtex (void)
 {
     bibtex_set_default_handler ();
-    g_log_set_handler ("BibTeX", BIB_LEVEL_ERROR,   
+
+    g_log_set_handler (G_LOG_DOMAIN, BIB_LEVEL_ERROR,   
 		       py_message_handler, NULL);
 
     (void) Py_InitModule("_bibtex", bibtexMeth);
