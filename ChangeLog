@@ -2,6 +2,18 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2003-10-30 13:27:58 GMT	Frederic Gobry <gobry@pybliographer.org>	patch-15
+
+    Summary:
+      cosmetic fixes
+    Revision:
+      python-bibtex--stable--1.2--patch-15
+
+
+    modified files:
+     ChangeLog README
+
+
 2003-10-08 05:20:47 GMT	Frederic Gobry <gobry@puck.ch>	patch-14
 
     Summary:

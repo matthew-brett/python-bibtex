@@ -11,6 +11,8 @@ This module requires the following libraries to be installed:
 
 * Compilation
 
+Run the following command:
+
    python setup.py build
 
 
