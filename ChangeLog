@@ -2,6 +2,18 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2004-08-13 08:32:14 GMT	Frederic Gobry <frederic.gobry@epfl.ch>	patch-22
+
+    Summary:
+      ready for release 1.2.1
+    Revision:
+      python-bibtex--stable--1.2--patch-22
+
+
+    modified files:
+     ChangeLog setup.py
+
+
 2004-08-12 14:16:33 GMT	Frederic Gobry <frederic.gobry@epfl.ch>	patch-21
 
     Summary:
