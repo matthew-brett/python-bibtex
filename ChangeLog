@@ -2,6 +2,27 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2003-09-19 14:14:59 GMT	Frederic Gobry <gobry@puck.ch>	patch-4
+
+    Summary:
+      test suite skeleton
+    Revision:
+      python-bibtex--stable--1.2--patch-4
+
+    added a testsuite that is automatically run before the module can be installed.
+    
+
+    new files:
+     ./.arch-ids/testsuite.py.id ./tests/.arch-ids/=id
+     ./testsuite.py
+
+    modified files:
+     ./ChangeLog ./setup.py
+
+    new directories:
+     ./tests ./tests/.arch-ids
+
+
 2003-09-18 13:51:58 GMT	Frederic Gobry <gobry@puck.ch>	patch-3
 
     Summary:

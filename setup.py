@@ -2,7 +2,9 @@
 
 import os, stat, sys
 
-from distutils.core import setup, Extension
+from distutils.core import setup, Extension, Command
+from distutils.errors import DistutilsExecError
+from distutils.command.install import install as base_install
 
 version = '1.1.92'
 
@@ -110,8 +112,53 @@ if rebuild ('biblex.l', ['biblex.c']):
 
     rename ('lex.bibtex_parser_.c', 'biblex.c')
 
+
+
+
+class run_check (Command):
+
+    """ Run all of the tests for the package using uninstalled (local)
+    files """
+    
+    description = "Automatically run the test suite for the package."
+
+    user_options = []
+
+    def initialize_options(self):
+        self.build_lib = None
+        return
+
+
+    def finalize_options(self):
+        # Obtain the build_lib directory from the build command
+        self.set_undefined_options ('build', ('build_lib', 'build_lib'))
+        return
+
+    def run(self):
+        # Ensure the extension is built
+        self.run_command ('build')
+        
+        # test the uninstalled extensions
+        libdir = os.path.join (os.getcwd (), self.build_lib)
+
+        sys.path.insert (0, libdir)
+
+        import testsuite
+        testsuite.run ()
+        return
     
 
+
+class run_install (base_install):
+
+    def run(self):
+        # The code must pass the tests before being installed
+        self.run_command ('check')
+        
+        base_install.run (self)
+        return
+    
+        
 # Actual compilation
 
 setup (name = "python-bibtex",
@@ -123,7 +170,10 @@ setup (name = "python-bibtex",
        url = 'http://pybliographer.org/',
 
        license = 'GPL',
-
+       
+       cmdclass = { 'check':   run_check,
+                    'install': run_install },
+       
        long_description = \
 '''
 This module contains two extensions needed for pybliographer:
