@@ -2,6 +2,20 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2003-09-19 15:04:57 GMT	Frederic Gobry <gobry@puck.ch>	patch-7
+
+    Summary:
+      explicit help for recode
+    Revision:
+      python-bibtex--stable--1.2--patch-7
+
+    - the error message is cleaner for broken recode
+    - the README explains this specific error message
+
+    modified files:
+     ./ChangeLog ./README ./setup.py ./testsuite.py
+
+
 2003-09-19 14:46:51 GMT	Frederic Gobry <gobry@puck.ch>	patch-6
 
     Summary:

@@ -8,7 +8,7 @@ def check_recode ():
     rq = _recode.request ('latin1..latex')
     
     if _recode.recode (rq, 'abc') != 'abc':
-        raise RuntimeError ('the _recode module is broken')
+        raise RuntimeError ('the _recode module is broken.')
 
     return
 

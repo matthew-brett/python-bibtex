@@ -144,7 +144,13 @@ class run_check (Command):
         sys.path.insert (0, libdir)
 
         import testsuite
-        testsuite.run ()
+
+        try:
+            testsuite.run ()
+
+        except RuntimeError, msg:
+            raise DistutilsExecError (msg)
+        
         return
     
 

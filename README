@@ -25,9 +25,19 @@ This module requires the following libraries to be installed:
 Ensure that the path to glib-2.0.pc from your installation is
 available in the environment variable PKG_CONFIG_PATH.
 
+
 ** GNU Recode is not in a standard place
 
 To build, run:
 
     python setup.py build_ext -I /path/to/recode/include -L /path/to/recode/lib
 
+
+** The installation fails with one of the following errors:
+
+*** "the _recode module is broken."
+
+This means that you are using an inadequate version of GNU Recode. You
+need to use either Recode 3.5, or Recode 3.6 with some extra patches.
+
+ * The stock version of Recode 3.6 from any GNU mirror DOES NOT WORK. *
