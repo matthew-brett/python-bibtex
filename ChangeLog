@@ -2,6 +2,21 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2004-04-16 10:06:47 GMT	Frederic Gobry <frederic.gobry@smartdata.ch>	patch-17
+
+    Summary:
+      be ready to release version 1.2.0
+    Revision:
+      python-bibtex--stable--1.2--patch-17
+
+
+    new files:
+     .arch-ids/.arch-inventory.id .arch-inventory
+
+    modified files:
+     ChangeLog setup.py {arch}/=tagging-method
+
+
 2004-04-16 09:59:01 GMT	Frederic Gobry <frederic.gobry@smartdata.ch>	patch-16
 
     Summary:
