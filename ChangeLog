@@ -2,6 +2,20 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2004-08-12 14:16:33 GMT	Frederic Gobry <frederic.gobry@epfl.ch>	patch-21
+
+    Summary:
+      compilation fixes for AMD64
+    Revision:
+      python-bibtex--stable--1.2--patch-21
+
+    Fix provided by Thomas Philipp via Karl Eichwalder.
+    
+
+    modified files:
+     ChangeLog entry.c source.c
+
+
 2004-06-21 19:05:59 GMT	Frederic Gobry <gobry@pybliographer.org>	patch-20
 
     Summary:

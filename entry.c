@@ -78,7 +78,7 @@ bibtex_entry_destroy (BibtexEntry * entry,
     if (entry->preamble) 
 	bibtex_struct_destroy (entry->preamble, TRUE);
 
-    g_hash_table_foreach (entry->table, free_data_field, (gpointer) content);
+    g_hash_table_foreach (entry->table, free_data_field, GINT_TO_POINTER(content));
     g_hash_table_destroy (entry->table);
 
     g_chunk_free (entry, entry_chunk);

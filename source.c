@@ -83,7 +83,7 @@ freedata (gpointer key,
 
     g_free (key);
 
-    if ((gboolean) user) {
+    if ((gboolean) GPOINTER_TO_INT(user)) {
 	bibtex_struct_destroy ((BibtexStruct *) value, TRUE);
     }
 }
@@ -123,7 +123,7 @@ bibtex_source_destroy (BibtexSource * source,
 		       gboolean free_data) {
     g_return_if_fail (source != NULL);
 
-    g_hash_table_foreach (source->table, freedata, (gpointer) free_data);
+    g_hash_table_foreach (source->table, freedata, GINT_TO_POINTER(free_data));
     g_hash_table_destroy (source->table);
 
     reset_source (source);
