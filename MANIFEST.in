@@ -1,3 +1,5 @@
 include *.[ch]
 include biblex.l bibparse.y
 include setup.py README ChangeLog
+include testsuite.py
+include tests/*.bib tests/*.bib-ok

@@ -2,6 +2,19 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2003-10-08 05:20:47 GMT	Frederic Gobry <gobry@puck.ch>	patch-14
+
+    Summary:
+      fixed archive content
+    Revision:
+      python-bibtex--stable--1.2--patch-14
+
+    The testsuite was missing from the archive
+
+    modified files:
+     ChangeLog MANIFEST.in setup.py
+
+
 2003-10-05 19:04:56 GMT	Frederic Gobry <gobry@puck.ch>	patch-13
 
     Summary:
