@@ -104,12 +104,13 @@ py_new_recoder (PyObject * self, PyObject * args) {
     request = recode_new_request (outer);
 
     if (request == NULL) {
-	PyErr_SetString (PyExc_IOError, "can't initialize new request");
+	PyErr_SetString (PyExc_RuntimeError, "can't initialize new request");
 	return NULL;
     }
 
     if (! recode_scan_request (request, string)) {
-	PyErr_SetString (PyExc_IOError, "can't initialize request");
+        recode_delete_request (request);
+	PyErr_SetString (PyExc_TypeError, "can't initialize request");
 	return NULL;
     }
 
@@ -144,7 +145,7 @@ py_recode (PyObject * self, PyObject * args) {
     string = recode_string (request, string);
 
     if (string == NULL) {
-      PyErr_SetString (PyExc_IOError, "can't convert");
+      PyErr_SetString (PyExc_RuntimeError, "can't convert");
       return NULL;
     }
 
