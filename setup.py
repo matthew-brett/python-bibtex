@@ -4,7 +4,7 @@ import os, stat, sys
 
 from distutils.core import setup, Extension
 
-version = '1.1.91'
+version = '1.1.92'
 
 
 bibtex = [

@@ -2,6 +2,19 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2003-09-18 13:51:58 GMT	Frederic Gobry <gobry@puck.ch>	patch-3
+
+    Summary:
+      release 1.1.92
+    Revision:
+      python-bibtex--stable--1.2--patch-3
+
+    - fixed setup.py to be declared as 1.1.92
+
+    modified files:
+     ./ChangeLog ./setup.py
+
+
 2003-09-17 20:03:34 GMT	Frederic Gobry <frederic.gobry@smartdata.ch>	patch-2
 
     Summary:
