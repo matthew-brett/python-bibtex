@@ -2,6 +2,23 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2004-04-29 20:53:22 GMT	Frederic Gobry <gobry@pybliographer.org>	patch-18
+
+    Summary:
+      fink compliant
+    Revision:
+      python-bibtex--stable--1.2--patch-18
+
+    With a patched recode from fink, it is now possible to build the extension
+    with:
+    
+      python setup.py build_ext -I /sw/include -L /sw/lib
+    
+
+    modified files:
+     ChangeLog biblex.l reverse.c
+
+
 2004-04-16 10:06:47 GMT	Frederic Gobry <frederic.gobry@smartdata.ch>	patch-17
 
     Summary:

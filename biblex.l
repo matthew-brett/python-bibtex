@@ -24,6 +24,8 @@
 */
 
 /*  #include "parsername.h" */
+
+#include <string.h>
 #include "bibtex.h"
 #include "bibparse.h"
 
