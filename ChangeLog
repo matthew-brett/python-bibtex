@@ -2,6 +2,20 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2003-09-21 20:33:27 GMT	Frederic Gobry <gobry@puck.ch>	patch-8
+
+    Summary:
+      removed the "module" suffix
+    Revision:
+      python-bibtex--stable--1.2--patch-8
+
+    the generated python extensions do not need to be called _recodemodule.so,
+    _recode.so is enough.
+
+    modified files:
+     ./ChangeLog ./setup.py
+
+
 2003-09-19 15:04:57 GMT	Frederic Gobry <gobry@puck.ch>	patch-7
 
     Summary:

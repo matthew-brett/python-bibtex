@@ -196,12 +196,12 @@ It requires the following libraries to be installed:
 
        ext_modules = [
 
-    Extension("_bibtexmodule", bibtex,
+    Extension("_bibtex", bibtex,
               include_dirs = includes,
               library_dirs = libdirs,
               libraries = libs + ['recode']),
 
-    Extension("_recodemodule", ["recodemodule.c"],
+    Extension("_recode", ["recodemodule.c"],
               include_dirs = includes,
               libraries = ['recode'])
     ])
