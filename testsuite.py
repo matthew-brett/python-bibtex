@@ -2,7 +2,11 @@
 modules are working """
 
 def check_recode ():
-    import _recode
+    try:
+        import _recode
+
+    except SystemError:
+        raise RuntimeError ('the recode library is probably broken.')
 
     # First, check if the recode version has the famous 3.6 bug
     rq = _recode.request ('latin1..latex')

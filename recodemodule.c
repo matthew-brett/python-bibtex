@@ -165,7 +165,10 @@ static PyMethodDef recodeMeth [] = {
 void init_recode (void)
 {
     outer = recode_new_outer (true);
-    if (outer == NULL) return;
+    if (outer == NULL) {
+	fprintf (stderr, "_recode: error: cannot initialize outer interface.\n");
+	return;
+    }
 
     (void) Py_InitModule ("_recode", recodeMeth);
 }

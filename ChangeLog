@@ -2,6 +2,21 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2003-09-23 21:00:34 GMT	Frederic Gobry <frederic.gobry@smartdata.ch>	patch-9
+
+    Summary:
+      explicit error message for recode import problem
+    Revision:
+      python-bibtex--stable--1.2--patch-9
+
+    When recode is compiled under certain circumstances (notably recode 3.5
+    with gcc-3.3), recode_outer_new () can return NULL. This causes the module
+    not to be loaded, but silentely. This patch adds a warning for this case.
+
+    modified files:
+     ./ChangeLog ./README ./recodemodule.c ./testsuite.py
+
+
 2003-09-21 20:33:27 GMT	Frederic Gobry <gobry@puck.ch>	patch-8
 
     Summary:

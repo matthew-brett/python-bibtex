@@ -41,3 +41,11 @@ This means that you are using an inadequate version of GNU Recode. You
 need to use either Recode 3.5, or Recode 3.6 with some extra patches.
 
  * The stock version of Recode 3.6 from any GNU mirror DOES NOT WORK. *
+
+*** "the recode library is probably broken."
+
+This means that GNU Recode has been compiled with a buggy version of
+gcc (gcc-3.3.2 seems to trigger this problem). You can recompile
+recode with the following option for configure:
+
+       CFLAGS=-g ./configure --prefix=...
