@@ -2,6 +2,20 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2004-04-16 09:59:01 GMT	Frederic Gobry <frederic.gobry@smartdata.ch>	patch-16
+
+    Summary:
+      fixed bug #932321
+    Revision:
+      python-bibtex--stable--1.2--patch-16
+
+    Support ñ and Ñ.
+    
+
+    modified files:
+     ChangeLog accents.c
+
+
 2003-10-30 13:27:58 GMT	Frederic Gobry <gobry@pybliographer.org>	patch-15
 
     Summary:
