@@ -1,0 +1,3 @@
+include *.[ch]
+include biblex.l bibparse.y
+include setup.py README

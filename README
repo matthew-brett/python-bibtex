@@ -1,0 +1,33 @@
+-*- outline -*-
+
+This python extension contains a BibTeX parser and a simple binding to
+the GNU Recode library. They are intended to be used with pybliographer.
+
+This module requires the following libraries to be installed:
+
+   - Glib-2.0 (and its development headers)
+   - GNU Recode 3.5 (and its development headers)
+
+
+* Compilation
+
+    python setup.py build
+
+* Installation
+
+   python setup.py install
+
+
+* Troubleshooting
+
+** Glib-2.0 is not in a standard place
+
+Ensure that the path to glib-2.0.pc from your installation is
+available in the environment variable PKG_CONFIG_PATH.
+
+** GNU Recode is not in a standard place
+
+To build, run:
+
+    python setup.py build_ext -I /path/to/recode/include -L /path/to/recode/lib
+
