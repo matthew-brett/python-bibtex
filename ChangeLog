@@ -2,6 +2,19 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2003-09-19 14:19:49 GMT	Frederic Gobry <gobry@puck.ch>	patch-5
+
+    Summary:
+      .py[co] are precious
+    Revision:
+      python-bibtex--stable--1.2--patch-5
+
+    accept pyc files in the tree
+
+    modified files:
+     ./ChangeLog ./{arch}/=tagging-method
+
+
 2003-09-19 14:14:59 GMT	Frederic Gobry <gobry@puck.ch>	patch-4
 
     Summary:
