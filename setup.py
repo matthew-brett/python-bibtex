@@ -146,12 +146,14 @@ class run_check (Command):
         import testsuite
 
         try:
-            testsuite.run ()
+            failures = testsuite.run ()
 
         except RuntimeError, msg:
             sys.stderr.write ('error: %s\n' % msg)
             raise DistutilsExecError ('please consult the "Troubleshooting" section in the README file.')
-        
+
+        if failures > 0:
+            raise DistutilsExecError ('check failed.')
         return
     
 

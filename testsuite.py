@@ -1,6 +1,9 @@
 """ Run is the main function that will check if the recode and bibtex
 modules are working """
 
+import sys, os
+
+
 def check_recode ():
     try:
         import _recode
@@ -14,20 +17,92 @@ def check_recode ():
     if _recode.recode (rq, 'abc') != 'abc':
         raise RuntimeError ('the _recode module is broken.')
 
-    return
+    return 0
+
 
 
 def check_bibtex ():
-    import _bibtex
+
+    _debug = False
     
-    return
+    import _bibtex
+
+
+    def checkfile (filename, strict = 1):
+        
+        def expand (file, entry):
+
+            items = entry [4]
+    
+            for k in items.keys ():
+                items [k] = _bibtex.expand (file, items [k], -1)
+
+            return
+        
+        file   = _bibtex.open_file (filename, strict)
+        result = open (filename + '-ok', 'r')
+
+        line     = 1
+        failures = 0
+        checks   = 0
+        
+        while 1:
+
+            try:
+                entry = _bibtex.next (file)
+
+                if entry is None: break
+                            
+                expand (file, entry)
+                obtained = `entry`
+                
+            except IOError, msg:
+                obtained = 'ParserError'
+                
+
+            if _debug: print obtained
+
+            valid = result.readline ().strip ()
+            
+            if obtained != valid:
+                sys.stderr.write ('error: %s: line %d: unexpected result:\n' % (
+                    filename, line))
+                sys.stderr.write ('error: %s: line %d:    obtained %s\n' % (
+                    filename, line, obtained))
+                sys.stderr.write ('error: %s: line %d:    expected %s\n' % (
+                    filename, line, valid))
+
+                failures = failures + 1
+
+            checks = checks + 1
+                
+        return failures, checks
+
+
+    failures = 0
+    checks   = 0
+    
+    for file in ('tests/simple.bib',
+                 'tests/eof.bib'):
+        
+        f, c = checkfile (file)
+        
+        failures = failures + f
+        checks   = checks   + c
+
+    print "testsuite: %d checks, %d failures" % (checks, failures)
+    return failures
 
 
 
 def run ():
-    check_recode ()
-    check_bibtex ()
-    return
+    failures = 0
+    
+    failures += check_recode ()
+    failures += check_bibtex ()
+    
+    return failures
+
 
 
     

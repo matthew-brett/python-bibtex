@@ -2,6 +2,55 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2003-10-03 09:31:09 GMT	Frederic Gobry <gobry@puck.ch>	patch-12
+
+    Summary:
+      merged preliminary bibtex checks
+    Revision:
+      python-bibtex--stable--1.2--patch-12
+
+    Patches applied:
+    
+     * gobry@puck.ch--2003/python-bibtex--development--1.2--base-0
+       tag of gobry@pybliographer.org--public/python-bibtex--stable--1.2--patch-10
+    
+     * gobry@puck.ch--2003/python-bibtex--development--1.2--patch-1
+       added a first trivial check for _bibtex
+    
+     * gobry@puck.ch--2003/python-bibtex--development--1.2--patch-2
+       removed C test program
+    
+     * gobry@puck.ch--2003/python-bibtex--development--1.2--patch-3
+       check for unfinished entries
+    
+     * gobry@puck.ch--2003/python-bibtex--development--1.2--patch-4
+       check for incomplete entries
+    
+     * gobry@puck.ch--2003/python-bibtex--development--1.2--patch-5
+       abort when some test fails
+    
+
+    new files:
+     tests/.arch-ids/eof.bib-ok.id tests/.arch-ids/eof.bib.id
+     tests/.arch-ids/simple.bib-ok.id tests/.arch-ids/simple.bib.id
+     tests/eof.bib tests/eof.bib-ok tests/simple.bib
+     tests/simple.bib-ok
+
+    removed files:
+     .arch-ids/testparser.c.id testparser.c
+
+    modified files:
+     ChangeLog bibtexmodule.c setup.py testsuite.py
+
+    new patches:
+     gobry@puck.ch--2003/python-bibtex--development--1.2--base-0
+     gobry@puck.ch--2003/python-bibtex--development--1.2--patch-1
+     gobry@puck.ch--2003/python-bibtex--development--1.2--patch-2
+     gobry@puck.ch--2003/python-bibtex--development--1.2--patch-3
+     gobry@puck.ch--2003/python-bibtex--development--1.2--patch-4
+     gobry@puck.ch--2003/python-bibtex--development--1.2--patch-5
+
+
 2003-10-01 07:47:18 GMT	Frederic Gobry <frederic.gobry@smartdata.ch>	patch-11
 
     Summary:
