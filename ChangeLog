@@ -2,6 +2,18 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2004-06-14 19:57:49 GMT	Frederic Gobry <gobry@pybliographer.org>	patch-19
+
+    Summary:
+      attempt to fix building on windows
+    Revision:
+      python-bibtex--stable--1.2--patch-19
+
+
+    modified files:
+     ChangeLog bibtexmodule.c recodemodule.c
+
+
 2004-04-29 20:53:22 GMT	Frederic Gobry <gobry@pybliographer.org>	patch-18
 
     Summary:

@@ -60,7 +60,7 @@ static char PyBibtexSource_Type__doc__[] = "This is the type of a BibTeX source"
 static char PyBibtexField_Type__doc__[]  = "This is the type of an internal BibTeX field";
 
 static PyTypeObject PyBibtexSource_Type = {
-  PyObject_HEAD_INIT(&PyType_Type)
+  PyObject_HEAD_INIT(NULL)
   0,                              /*ob_size*/
   "BibtexSource",                 /*tp_name*/
   sizeof(PyBibtexSource_Object),  /*tp_basicsize*/
@@ -82,7 +82,7 @@ static PyTypeObject PyBibtexSource_Type = {
 };
 
 static PyTypeObject PyBibtexField_Type = {
-  PyObject_HEAD_INIT(&PyType_Type)
+  PyObject_HEAD_INIT(NULL)
   0,                              /*ob_size*/
   "BibtexField",                  /*tp_name*/
   sizeof(PyBibtexField_Object) ,  /*tp_basicsize*/
@@ -723,6 +723,9 @@ static PyMethodDef bibtexMeth [] = {
 
 void init_bibtex (void)
 {
+    PyBibtexSource_Type.ob_type = & PyType_Type;
+    PyBibtexField_Type.ob_type =  & PyType_Type;
+
     bibtex_set_default_handler ();
 
     g_log_set_handler (G_LOG_DOMAIN, BIB_LEVEL_ERROR,   
