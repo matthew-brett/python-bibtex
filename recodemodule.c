@@ -70,7 +70,7 @@ static void py_delete_recoder (PyRecodeRequest_Object * self) {
 static char PyRecodeRequest_Type__doc__[]  = "This is the type of a recoder";
 
 static PyTypeObject PyRecodeRequest_Type = {
-  PyObject_HEAD_INIT(&PyType_Type)
+  PyObject_HEAD_INIT(NULL)
   0,                              /*ob_size*/
   "RecodeRequest",                 /*tp_name*/
   sizeof(PyRecodeRequest_Object), /*tp_basicsize*/

@@ -2,6 +2,18 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2004-06-21 19:05:59 GMT	Frederic Gobry <gobry@pybliographer.org>	patch-20
+
+    Summary:
+      fixed the remaining HEAD_INIT ()
+    Revision:
+      python-bibtex--stable--1.2--patch-20
+
+
+    modified files:
+     ChangeLog recodemodule.c
+
+
 2004-06-14 19:57:49 GMT	Frederic Gobry <gobry@pybliographer.org>	patch-19
 
     Summary:
