@@ -83,7 +83,8 @@ def check_bibtex ():
     checks   = 0
     
     for file in ('tests/simple.bib',
-                 'tests/eof.bib'):
+                 'tests/eof.bib',
+                 'tests/paren.bib'):
         
         f, c = checkfile (file)
         

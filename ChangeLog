@@ -2,6 +2,22 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2004-12-15 20:54:32 GMT	Frederic Gobry <frederic.gobry@epfl.ch>	patch-23
+
+    Summary:
+      added a test for () in record key
+    Revision:
+      python-bibtex--stable--1.2--patch-23
+
+
+    new files:
+     tests/.arch-ids/paren.bib-ok.id tests/.arch-ids/paren.bib.id
+     tests/paren.bib tests/paren.bib-ok
+
+    modified files:
+     ChangeLog testsuite.py
+
+
 2004-08-13 08:32:14 GMT	Frederic Gobry <frederic.gobry@epfl.ch>	patch-22
 
     Summary:
