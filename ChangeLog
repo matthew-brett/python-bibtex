@@ -2,6 +2,20 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2003-10-05 19:04:56 GMT	Frederic Gobry <gobry@puck.ch>	patch-13
+
+    Summary:
+      prepare 1.1.93
+    Revision:
+      python-bibtex--stable--1.2--patch-13
+
+    - fixed version number
+    - distribute the changelog
+
+    modified files:
+     ChangeLog MANIFEST.in setup.py
+
+
 2003-10-03 09:31:09 GMT	Frederic Gobry <gobry@puck.ch>	patch-12
 
     Summary:
