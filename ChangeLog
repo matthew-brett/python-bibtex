@@ -2,6 +2,19 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2003-09-19 14:46:51 GMT	Frederic Gobry <gobry@puck.ch>	patch-6
+
+    Summary:
+      forbid installation of broken recode
+    Revision:
+      python-bibtex--stable--1.2--patch-6
+
+    the test suite checks that recode is not broken.
+
+    modified files:
+     ./ChangeLog ./testsuite.py
+
+
 2003-09-19 14:19:49 GMT	Frederic Gobry <gobry@puck.ch>	patch-5
 
     Summary:
