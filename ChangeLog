@@ -2,6 +2,20 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2005-06-22 20:03:48 GMT	Frederic Gobry <frederic.gobry@epfl.ch>	patch-24
+
+    Summary:
+      applied patch from mh21 for bug #1224723
+    Revision:
+      python-bibtex--stable--1.2--patch-24
+
+    encode ÜII as \"{U}{II}
+    
+
+    modified files:
+     ChangeLog reverse.c
+
+
 2004-12-15 20:54:32 GMT	Frederic Gobry <frederic.gobry@epfl.ch>	patch-23
 
     Summary:

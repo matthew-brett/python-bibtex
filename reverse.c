@@ -107,7 +107,7 @@ bibtex_reverse_field (BibtexField * field,
 		      gboolean do_quote) {
     BibtexStruct * s = NULL;
     gchar * string, * tmp;
-    gboolean is_upper, has_space, is_command;
+    gboolean is_upper, has_space, is_command, was_command;
     gint i;
     BibtexAuthor * author;
 
@@ -213,8 +213,9 @@ bibtex_reverse_field (BibtexField * field,
 	tmp ++;
 
 	/* check for upper cases afterward */
-	is_upper   = false;
-	is_command = false;
+	is_upper    = false;
+	is_command  = false;
+	was_command = false;
 
 	while (* tmp) {
 	    /* start a latex command */
@@ -226,7 +227,8 @@ bibtex_reverse_field (BibtexField * field,
 		    g_string_append_c (st, '}');
 		}
 
-		is_command = true;
+		is_command  = true;
+		was_command = false;
 		g_string_append_c (st, * tmp);
 		tmp ++;
 
@@ -235,7 +237,8 @@ bibtex_reverse_field (BibtexField * field,
 	    if (is_command) {
 		if (! ((* tmp >= 'a' && * tmp <= 'z') ||
 		       (* tmp >= 'A' && * tmp <= 'Z'))) {
-		    is_command = false;
+		    is_command  = false;
+		    was_command = true;
 		}
 		g_string_append_c (st, * tmp);
 		tmp ++;
@@ -246,9 +249,15 @@ bibtex_reverse_field (BibtexField * field,
 	    if (* tmp >= 'A' && * tmp <= 'Z') {
 		if (! is_upper) {
 		    g_string_append_c (st, '{');
-		    is_upper = true;
+		    g_string_append_c (st, * tmp);
+		    if (was_command) {
+			g_string_append_c (st, '}');
+		    } else {
+			is_upper = true;
+		    }
+		} else {
+		    g_string_append_c (st, * tmp);
 		}
-		g_string_append_c (st, * tmp);
 	    }
 	    else {
 		if (is_upper) {
@@ -258,6 +267,7 @@ bibtex_reverse_field (BibtexField * field,
 
 		g_string_append_c (st, * tmp);
 	    }
+	    was_command = false;
 	    tmp ++;
 	}
 
