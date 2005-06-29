@@ -2,6 +2,36 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2005-06-29 21:03:25 GMT	Frederic Gobry <frederic.gobry@epfl.ch>	patch-25
+
+    Summary:
+      added a new parsing function next_unfiltered ()
+    Revision:
+      python-bibtex--stable--1.2--patch-25
+
+    This function also returns @string and @preamble entries. Its return value
+    is the same as next (), but encapsulated in an additional tuple, like:
+    
+      ('entry', ...)
+      ('preamble', ...)
+      ('string', ...)
+    
+    
+
+    new files:
+     tests/.arch-ids/preamble.bib-ok.id
+     tests/.arch-ids/preamble.bib.id
+     tests/.arch-ids/simple-2.bib-ok.id
+     tests/.arch-ids/simple-2.bib.id
+     tests/.arch-ids/string.bib-ok.id tests/.arch-ids/string.bib.id
+     tests/preamble.bib tests/preamble.bib-ok tests/simple-2.bib
+     tests/simple-2.bib-ok tests/string.bib tests/string.bib-ok
+
+    modified files:
+     ChangeLog bibtex.c bibtex.h bibtexmodule.c entry.c
+     testsuite.py
+
+
 2005-06-22 20:03:48 GMT	Frederic Gobry <frederic.gobry@epfl.ch>	patch-24
 
     Summary:

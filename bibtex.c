@@ -145,9 +145,8 @@ bibtex_source_next_entry (BibtexSource * file,
 				ent = NULL;
 			    }
 			    else {
-			        /* flatten the preamble */
-			        ent->preamble = 
-				   bibtex_struct_flatten (ent->preamble);
+				ent->textual_preamble =
+				    bibtex_struct_as_bibtex (ent->preamble);
 			    }
 			    break;
 			}

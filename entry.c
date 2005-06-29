@@ -58,6 +58,7 @@ bibtex_entry_new (void) {
 
     entry->name = entry->type = NULL;
     entry->preamble = NULL;
+    entry->textual_preamble = NULL;
     
     entry->table = g_hash_table_new (g_str_hash, g_str_equal);
 
@@ -74,6 +75,9 @@ bibtex_entry_destroy (BibtexEntry * entry,
 
     if (entry->name)
 	g_free (entry->name);
+
+    if (entry->textual_preamble)
+	g_free (entry->textual_preamble);
 
     if (entry->preamble) 
 	bibtex_struct_destroy (entry->preamble, TRUE);

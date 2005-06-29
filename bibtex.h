@@ -151,6 +151,7 @@ extern "C" {
 	gchar * name;
 	
 	BibtexStruct * preamble;
+	gchar * textual_preamble;
 
 	GHashTable * table;
     } 

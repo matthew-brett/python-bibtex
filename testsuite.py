@@ -78,9 +78,73 @@ def check_bibtex ():
                 
         return failures, checks
 
+    def checkunfiltered (filename, strict = 1):
+        
+        def expand (file, entry):
+
+            if entry [0] in ('preamble', 'string'): return
+            
+            items = entry [1] [4]
+    
+            for k in items.keys ():
+                items [k] = _bibtex.expand (file, items [k], -1)
+
+            return
+        
+        file   = _bibtex.open_file (filename, strict)
+        result = open (filename + '-ok', 'r')
+
+        line     = 1
+        failures = 0
+        checks   = 0
+        
+        while 1:
+
+            try:
+                entry = _bibtex.next_unfiltered (file)
+
+                if entry is None: break
+
+                expand (file, entry)
+                obtained = `entry`
+                
+            except IOError, msg:
+                obtained = 'ParserError'
+                
+
+            if _debug: print obtained
+
+            valid = result.readline ().strip ()
+            
+            if obtained != valid:
+                sys.stderr.write ('error: %s: line %d: unexpected result:\n' % (
+                    filename, line))
+                sys.stderr.write ('error: %s: line %d:    obtained %s\n' % (
+                    filename, line, obtained))
+                sys.stderr.write ('error: %s: line %d:    expected %s\n' % (
+                    filename, line, valid))
+
+                failures = failures + 1
+
+            checks = checks + 1
+                
+        return failures, checks
 
     failures = 0
     checks   = 0
+
+    
+    for file in ('tests/preamble.bib',
+                 'tests/string.bib',
+                 'tests/simple-2.bib'):
+        
+        f, c = checkunfiltered (file)
+        
+        failures = failures + f
+        checks   = checks   + c
+
+    failures += f
+    checks   += c
     
     for file in ('tests/simple.bib',
                  'tests/eof.bib',

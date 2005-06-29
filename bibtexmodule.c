@@ -467,20 +467,16 @@ bib_set_string (PyObject * self, PyObject * args)
 
 
 static PyObject *
-bib_next (PyObject * self, PyObject * args)
+_bib_next (PyBibtexSource_Object * file_obj, gboolean filter)
 {
     BibtexEntry * ent;
     BibtexSource * file;
-    PyBibtexSource_Object * file_obj;
 
     PyObject * dico, * tmp, * name;
 
-    if (! PyArg_ParseTuple(args, "O!:next", & PyBibtexSource_Type, & file_obj))
-	return NULL;
-
     file = file_obj->obj;
 
-    ent = bibtex_source_next_entry (file, TRUE);
+    ent = bibtex_source_next_entry (file, filter);
 
     if (ent == NULL) {
 	if (file->eof) {
@@ -492,24 +488,67 @@ bib_next (PyObject * self, PyObject * args)
     }
 
     /* Retour de la fonction */
-    dico = PyDict_New (); 
-    g_hash_table_foreach (ent->table, fill_dico, dico);
-
-    if (ent->name) {
-      name = PyString_FromString (ent->name);
+    if (! filter && ! ent->name) {
+	if (ent->textual_preamble) {
+	    tmp = Py_BuildValue ("ss", ent->type, ent->textual_preamble);
+	}
+	else {
+	    /* this must be a string then... */
+	    tmp = Py_BuildValue ("(s)", ent->type);
+	}
     }
     else {
-      name = Py_None;
+	dico = PyDict_New (); 
+	
+	g_hash_table_foreach (ent->table, fill_dico, dico);
+	
+	if (ent->name) {
+	    name = PyString_FromString (ent->name);
+	}
+	else {
+	    name = Py_None;
+	}
+	
+	if (filter) {
+	    tmp = Py_BuildValue ("OsiiO", name, ent->type, 
+				 ent->offset, ent->start_line,
+				 dico);
+	}
+	else {
+	    tmp = Py_BuildValue ("(s(OsiiO))", "entry", name, 
+				 ent->type, 
+				 ent->offset, ent->start_line,
+				 dico);
+	}
+	    
+	Py_DECREF (dico);
     }
-
-    tmp = Py_BuildValue ("OsiiO", name, ent->type, 
-			 ent->offset, ent->start_line,
-			 dico);
-    Py_DECREF (dico);
 
     bibtex_entry_destroy (ent, FALSE);
 
     return tmp;
+}
+
+static PyObject *
+bib_next (PyObject * self, PyObject * args)
+{
+    PyBibtexSource_Object * file_obj;
+
+    if (! PyArg_ParseTuple(args, "O!:next", & PyBibtexSource_Type, & file_obj))
+	return NULL;
+
+    return _bib_next (file_obj, TRUE);
+}
+
+static PyObject *
+bib_next_unfiltered (PyObject * self, PyObject * args)
+{
+    PyBibtexSource_Object * file_obj;
+
+    if (! PyArg_ParseTuple(args, "O!:next", & PyBibtexSource_Type, & file_obj))
+	return NULL;
+
+    return _bib_next (file_obj, FALSE);
 }
 
 
@@ -706,6 +745,7 @@ static PyMethodDef bibtexMeth [] = {
     { "open_file", bib_open_file, METH_VARARGS },
     { "open_string", bib_open_string, METH_VARARGS },
     { "next", bib_next, METH_VARARGS },
+    { "next_unfiltered", bib_next_unfiltered, METH_VARARGS },
     { "first", bib_first, METH_VARARGS },
     { "set_offset", bib_set_offset, METH_VARARGS },
     { "get_offset", bib_get_offset, METH_VARARGS },
@@ -730,6 +770,7 @@ void init_bibtex (void)
 
     g_log_set_handler (G_LOG_DOMAIN, BIB_LEVEL_ERROR,   
 		       py_message_handler, NULL);
+    g_log_set_always_fatal (G_LOG_LEVEL_CRITICAL);
 
     (void) Py_InitModule("_bibtex", bibtexMeth);
 }
