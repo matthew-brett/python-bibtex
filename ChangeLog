@@ -2,6 +2,21 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2005-08-24 20:50:06 GMT	Frederic Gobry <frederic.gobry@epfl.ch>	patch-26
+
+    Summary:
+      slight improvement in an error message
+    Revision:
+      python-bibtex--stable--1.2--patch-26
+
+    For extra commas in entry keys, the error message was speaking
+    about a preamble problem.
+    
+
+    modified files:
+     ChangeLog bibparse.y
+
+
 2005-06-29 21:03:25 GMT	Frederic Gobry <frederic.gobry@epfl.ch>	patch-25
 
     Summary:

@@ -395,7 +395,7 @@ value:	  L_NAME '=' content
     entry_start = start_line + entry->length;
 
     if (entry->preamble) {
-	bibtex_parser_start_error ("entry already contains a preamble");
+	bibtex_parser_start_error ("entry already contains a preamble or has an unexpected comma in its key");
 	YYABORT;
     }
 
