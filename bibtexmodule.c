@@ -600,7 +600,7 @@ bib_reverse (PyObject * self, PyObject * args)
 
     gint length, i, brace, quote;
 
-    if (! PyArg_ParseTuple(args, "iiOi:reverse", & type, & brace, & tuple, &quote))
+    if (! PyArg_ParseTuple(args, "iiO:reverse", & type, & brace, & tuple))
 	return NULL;
 
     field = bibtex_field_new (type);
@@ -610,10 +610,14 @@ bib_reverse (PyObject * self, PyObject * args)
 	return NULL;
     }
 
+    quote = 0;
+
     switch (field->type) {
+    case BIBTEX_VERBATIM:
+	quote = 1;
+
     case BIBTEX_OTHER:
     case BIBTEX_TITLE:
-    case BIBTEX_VERBATIM:
 	tmp = PyObject_Str (tuple);
 	if (tmp == NULL) return NULL;
 

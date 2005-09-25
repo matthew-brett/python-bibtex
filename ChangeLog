@@ -2,6 +2,20 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2005-09-25 20:20:25 GMT	Frederic Gobry <frederic.gobry@epfl.ch>	patch-28
+
+    Summary:
+      use the BIBTEX_VERBATIM type to specify no quoting in reverse ()
+    Revision:
+      python-bibtex--stable--1.2--patch-28
+
+    
+    
+
+    modified files:
+     ChangeLog bibtexmodule.c
+
+
 2005-09-25 20:11:33 GMT	Frederic Gobry <frederic.gobry@epfl.ch>	patch-27
 
     Summary:
