@@ -311,7 +311,7 @@ bibtex_real_string (BibtexStruct * s,
     switch (s->type) {
 
     case BIBTEX_STRUCT_SPACE:
-	if (as_bibtex) {
+	if (as_bibtex || type == BIBTEX_VERBATIM) {
 	    if (s->value.unbreakable) {
 		text = g_strdup ("~");
 	    } 

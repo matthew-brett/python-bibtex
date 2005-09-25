@@ -64,6 +64,7 @@ bibtex_field_new (BibtexFieldType type) {
 
     case BIBTEX_OTHER:
     case BIBTEX_TITLE:
+    case BIBTEX_VERBATIM:
 	break;
 
     default:
@@ -169,15 +170,10 @@ bibtex_string_as_field (gchar * string,
 
     switch (type) {
     case BIBTEX_AUTHOR:
-	break;
-
     case BIBTEX_DATE:
-	break;
-
     case BIBTEX_TITLE:
-	break;
-
     case BIBTEX_OTHER:
+    case BIBTEX_VERBATIM:
 	break;
 
     default:

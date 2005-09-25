@@ -379,6 +379,7 @@ value:	  L_NAME '=' content
 	    type = BIBTEX_DATE;
 	    break;
 	}
+
     } 
     while (0);
 

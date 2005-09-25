@@ -91,6 +91,7 @@ extern "C" {
 	BIBTEX_AUTHOR,
 	BIBTEX_TITLE,
 	BIBTEX_DATE,
+	BIBTEX_VERBATIM,
     } 
     BibtexFieldType;
 

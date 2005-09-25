@@ -141,6 +141,7 @@ bibtex_reverse_field (BibtexField * field,
 
     switch (field->type) {
     case BIBTEX_OTHER:
+    case BIBTEX_VERBATIM:
 	g_return_val_if_fail (field->text != NULL, NULL);
 
 	g_string_truncate (st, 0);

@@ -28,14 +28,14 @@ def check_bibtex ():
     import _bibtex
 
 
-    def checkfile (filename, strict = 1):
+    def checkfile (filename, strict = 1, typemap = {}):
         
-        def expand (file, entry):
+        def expand (file, entry, type = -1):
 
             items = entry [4]
     
             for k in items.keys ():
-                items [k] = _bibtex.expand (file, items [k], -1)
+                items [k] = _bibtex.expand (file, items [k], typemap.get (k, -1))
 
             return
         
@@ -148,9 +148,10 @@ def check_bibtex ():
     
     for file in ('tests/simple.bib',
                  'tests/eof.bib',
-                 'tests/paren.bib'):
+                 'tests/paren.bib',
+                 'tests/url.bib'):
         
-        f, c = checkfile (file)
+        f, c = checkfile (file, typemap = {'url': 4})
         
         failures = failures + f
         checks   = checks   + c

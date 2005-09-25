@@ -2,6 +2,26 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2005-09-25 20:11:33 GMT	Frederic Gobry <frederic.gobry@epfl.ch>	patch-27
+
+    Summary:
+      added support for "verbatim" fields, like urls
+    Revision:
+      python-bibtex--stable--1.2--patch-27
+
+    These fields have their ~ not escaped (so far, this overlaps the
+    "quote" option of the reverse function)
+    
+
+    new files:
+     tests/.arch-ids/url.bib-ok.id tests/.arch-ids/url.bib.id
+     tests/url.bib tests/url.bib-ok
+
+    modified files:
+     ChangeLog bibparse.y bibtex.h bibtexmodule.c field.c reverse.c
+     struct.c testsuite.py
+
+
 2005-08-24 20:50:06 GMT	Frederic Gobry <frederic.gobry@epfl.ch>	patch-26
 
     Summary:

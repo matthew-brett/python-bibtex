@@ -206,6 +206,7 @@ bib_expand (PyObject * self, PyObject * args) {
     switch (field->type) {
     case BIBTEX_TITLE:
     case BIBTEX_OTHER:
+    case BIBTEX_VERBATIM:
 	tmp = Py_BuildValue ("iis", field->type, field->loss,
 			     field->text);
 	break;
@@ -612,6 +613,7 @@ bib_reverse (PyObject * self, PyObject * args)
     switch (field->type) {
     case BIBTEX_OTHER:
     case BIBTEX_TITLE:
+    case BIBTEX_VERBATIM:
 	tmp = PyObject_Str (tuple);
 	if (tmp == NULL) return NULL;
 
