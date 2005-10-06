@@ -2,6 +2,18 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2005-10-06 14:05:40 GMT	Frederic Gobry <frederic.gobry@epfl.ch>	patch-30
+
+    Summary:
+      oops, forgot the NEWS file in the manifest
+    Revision:
+      python-bibtex--stable--1.2--patch-30
+
+
+    modified files:
+     ChangeLog MANIFEST.in
+
+
 2005-10-06 14:04:28 GMT	Frederic Gobry <frederic.gobry@epfl.ch>	patch-29
 
     Summary:
