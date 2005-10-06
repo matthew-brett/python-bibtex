@@ -1,0 +1,7 @@
+-*- charset: utf-8 -*-
+
+Version 1.2.2 (2005-10-06)
+
+  * proper encoding of MÜSLI as M\"{U}{SLI} (closes bug #1224723)
+  * allows handling of @preamble statements
+  * better escaping of verbatim fields, like URLs

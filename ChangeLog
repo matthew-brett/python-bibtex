@@ -2,6 +2,21 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2005-10-06 14:04:28 GMT	Frederic Gobry <frederic.gobry@epfl.ch>	patch-29
+
+    Summary:
+      ready for release 1.2.2
+    Revision:
+      python-bibtex--stable--1.2--patch-29
+
+
+    new files:
+     .arch-ids/NEWS.id NEWS
+
+    modified files:
+     ChangeLog setup.py
+
+
 2005-09-25 20:20:25 GMT	Frederic Gobry <frederic.gobry@epfl.ch>	patch-28
 
     Summary:
