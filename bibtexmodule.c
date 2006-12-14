@@ -44,7 +44,7 @@ typedef struct {
 /* Destructor of BibtexFile */
 static void bibtex_py_close (PyBibtexSource_Object * self) {
     bibtex_source_destroy (self->obj, TRUE);
-    PyMem_DEL (self);
+    PyObject_DEL (self);
 }
 
 /* Destructor of BibtexEntry */
@@ -53,7 +53,7 @@ static void destroy_field (PyBibtexField_Object * self)
 {
     bibtex_field_destroy (self->obj, TRUE);
 
-    PyMem_DEL (self);
+    PyObject_DEL (self);
 }
 
 static char PyBibtexSource_Type__doc__[] = "This is the type of a BibTeX source";

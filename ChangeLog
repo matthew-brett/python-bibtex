@@ -2,6 +2,30 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2006-12-14 21:11:53 GMT	Frederic Gobry <frederic.gobry@epfl.ch>	patch-31
+
+    Summary:
+      merged python2.5 compilation fixes from Zoltan
+    Revision:
+      python-bibtex--stable--1.2--patch-31
+
+    Patches applied:
+    
+     * kota@szbk.u-szeged.hu--pyblio/python-bibtex--stable--1.2--base-0
+       tag of gobry@pybliographer.org--public/python-bibtex--stable--1.2--patch-30
+    
+     * kota@szbk.u-szeged.hu--pyblio/python-bibtex--stable--1.2--patch-1
+       fix for python 2.5
+    
+
+    modified files:
+     ChangeLog bibtexmodule.c
+
+    new patches:
+     kota@szbk.u-szeged.hu--pyblio/python-bibtex--stable--1.2--base-0
+     kota@szbk.u-szeged.hu--pyblio/python-bibtex--stable--1.2--patch-1
+
+
 2005-10-06 14:05:40 GMT	Frederic Gobry <frederic.gobry@epfl.ch>	patch-30
 
     Summary:
