@@ -407,12 +407,12 @@ bibtex_real_string (BibtexStruct * s,
 		if (level == 0 && as_bibtex && ! first && ! as_latex) {
 		    g_string_append (string, " # ");
 		}
-		tmp = bibtex_real_string (tmp_s, type, dico, as_bibtex, level,
-					  loss, at_beginning && first, 
-					  strip_first_layer, as_latex);
+		tmp = bibtex_real_string(tmp_s, type, dico, as_bibtex, level,
+					 loss, at_beginning && first, 
+					 strip_first_layer, as_latex);
 
-		g_string_append (string, tmp);
-		g_free (tmp);
+		g_string_append(string, tmp);
+		g_free(tmp);
 	    }
 
 	    first = FALSE;

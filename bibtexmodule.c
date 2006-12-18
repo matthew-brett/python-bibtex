@@ -200,7 +200,7 @@ bib_expand (PyObject * self, PyObject * args) {
 	    field->type = type;
 	}
 
-	bibtex_field_parse (field, file->table);
+	bibtex_field_parse(field, file->table);
     }
 
     switch (field->type) {

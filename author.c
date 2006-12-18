@@ -362,6 +362,7 @@ extract_author (BibtexAuthorGroup * authors,
 	if (group->level == 1  &&
 	    comas == 0         &&
 	    islower (text [0]) && 
+	    sections > 0       &&
 	    lastname_section == -1) {
 
 	    if (array->len) {
@@ -430,23 +431,24 @@ extract_author (BibtexAuthorGroup * authors,
 	/* If there is no lowercase word indicating the last name */
 	if (lastname_section == -1) {
 	    /* simply take the last word of the first sequence */
-	    g_ptr_array_add (section [1], 
-			     g_ptr_array_index (section [0], section [0]->len - 1));
-	    g_ptr_array_index (section [0], section [0]->len - 1) = NULL;
+	    g_ptr_array_add(section[1],  
+			    g_ptr_array_index(section[0], 
+					      section[0]->len-1));
+	    g_ptr_array_index(section[0], section[0]->len-1) = NULL;
 
 	    lastname_section = 1;
 	}
 	else {
-	    g_ptr_array_add (section [0], NULL);
+	    g_ptr_array_add(section[0], NULL);
 	}
 	
-	g_ptr_array_add (section [1], NULL);
+	g_ptr_array_add(section[1], NULL);
 
-	if (section [0]->len > 1) {
-	    author->first = g_strjoinv (" ", (gchar **) section [0]->pdata);
+	if (section[0]->len > 1) {
+	    author->first = g_strjoinv(" ", (gchar**)section[0]->pdata);
 	}
 
-	author->last  = g_strjoinv (" ", (gchar **) section [lastname_section]->pdata);
+	author->last  = g_strjoinv(" ", (gchar**)section[lastname_section]->pdata);
 	break;
 
     case 2:

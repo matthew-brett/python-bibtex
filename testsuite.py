@@ -147,6 +147,7 @@ def check_bibtex ():
     checks   += c
     
     for file in ('tests/simple.bib',
+                 'tests/authors.bib',
                  'tests/eof.bib',
                  'tests/paren.bib',
                  'tests/url.bib'):
