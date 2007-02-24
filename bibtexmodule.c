@@ -610,11 +610,11 @@ bib_reverse (PyObject * self, PyObject * args)
 	return NULL;
     }
 
-    quote = 0;
+    quote = 1;
 
     switch (field->type) {
     case BIBTEX_VERBATIM:
-	quote = 1;
+	quote = 0;
 
     case BIBTEX_OTHER:
     case BIBTEX_TITLE:

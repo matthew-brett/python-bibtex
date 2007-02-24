@@ -2,6 +2,18 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2007-02-24 17:29:04 GMT	Frederic Gobry <frederic.gobry@epfl.ch>	patch-34
+
+    Summary:
+      fixed bug in escaping non title fields
+    Revision:
+      python-bibtex--stable--1.2--patch-34
+
+
+    modified files:
+     ChangeLog bibtexmodule.c testsuite.py
+
+
 2007-01-19 10:39:19 GMT	Frederic Gobry <frederic.gobry@epfl.ch>	patch-33
 
     Summary:

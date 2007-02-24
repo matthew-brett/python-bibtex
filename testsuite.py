@@ -1,3 +1,4 @@
+# -* coding: latin-1 -*-
 """ Run is the main function that will check if the recode and bibtex
 modules are working """
 
@@ -123,23 +124,33 @@ def check_bibtex ():
                     filename, line, obtained))
                 sys.stderr.write ('error: %s: line %d:    expected %s\n' % (
                     filename, line, valid))
-
                 failures = failures + 1
-
             checks = checks + 1
-                
         return failures, checks
 
     failures = 0
     checks   = 0
 
-    
-    for file in ('tests/preamble.bib',
-                 'tests/string.bib',
-                 'tests/simple-2.bib'):
-        
+    parser = _bibtex.open_file('/dev/null', True)
+    def convert(text, t):
+        field = _bibtex.reverse(t, True, text)
+        return _bibtex.get_latex(parser, field, t)
+
+    text = 'éssai A {} toto~tutu'
+    for t, r in ((0, r'\'essai A \{\} toto~tutu'),
+                 (2, r'\'essai {A} \{\} toto~tutu'),
+                 (4, text)):
+        checks += 1
+        o = convert(text, t)
+        if o != r:
+            print "type %d convert: got %r instead of %r" % (
+                t, o, r)
+            failures += 1
+
+    for file in('tests/preamble.bib',
+                'tests/string.bib',
+                'tests/simple-2.bib'):
         f, c = checkunfiltered (file)
-        
         failures = failures + f
         checks   = checks   + c
 
