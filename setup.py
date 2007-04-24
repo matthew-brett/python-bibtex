@@ -6,7 +6,7 @@ from distutils.core import setup, Extension, Command
 from distutils.errors import DistutilsExecError
 from distutils.command.install import install as base_install
 
-version = '1.2.3'
+version = '1.2.4'
 
 
 bibtex = [

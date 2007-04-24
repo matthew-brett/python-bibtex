@@ -2,6 +2,34 @@
 # arch-tag: automatic-ChangeLog--gobry@pybliographer.org--public/python-bibtex--stable--1.2
 #
 
+2007-04-24 17:32:48 GMT	Frederic Gobry <gobry@pybliographer.org>	patch-35
+
+    Summary:
+      merged with zoltan's branch
+    Revision:
+      python-bibtex--stable--1.2--patch-35
+
+    Patches applied:
+    
+     * kota@szbk.u-szeged.hu--pyblio/python-bibtex--stable--1.2--patch-4
+       merged patch-33 from Frederic
+    
+     * kota@szbk.u-szeged.hu--pyblio/python-bibtex--stable--1.2--patch-5
+       merge patch-34 from Frederic
+    
+     * kota@szbk.u-szeged.hu--pyblio/python-bibtex--stable--1.2--patch-6
+       ready for 1.2.4
+    
+
+    modified files:
+     ChangeLog NEWS setup.py
+
+    new patches:
+     kota@szbk.u-szeged.hu--pyblio/python-bibtex--stable--1.2--patch-4
+     kota@szbk.u-szeged.hu--pyblio/python-bibtex--stable--1.2--patch-5
+     kota@szbk.u-szeged.hu--pyblio/python-bibtex--stable--1.2--patch-6
+
+
 2007-02-24 17:29:04 GMT	Frederic Gobry <frederic.gobry@epfl.ch>	patch-34
 
     Summary:
